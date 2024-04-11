@@ -32,6 +32,13 @@ response_patterns = {
     "favorite_color": ["My favorite color is blue.", "I don't have eyes to see colors, but blue sounds nice!"]
 }
 
+# Hardcoded dataset for recommendations
+recommendations = {
+    "movies": ["The Shawshank Redemption", "The Godfather", "The Dark Knight", "Pulp Fiction", "Forrest Gump"],
+    "books": ["To Kill a Mockingbird", "1984", "The Great Gatsby", "The Catcher in the Rye", "Harry Potter series"],
+    "restaurants": ["Italian Bistro", "Sushi House", "Mexican Cantina", "Steakhouse Grill", "Vegetarian Cafe"]
+}
+
 # Function to perform arithmetic calculations
 def calculate(expression):
     try:
@@ -61,6 +68,13 @@ def search_wikipedia(query):
         return data['query']['search'][0]['snippet']
     else:
         return "Sorry, I couldn't find information on that topic."
+
+# Function to provide personalized recommendations
+def provide_recommendations(category):
+    if category.lower() in recommendations:
+        return f"Here are some {category} recommendations for you: {', '.join(recommendations[category.lower()])}"
+    else:
+        return f"Sorry, I don't have recommendations for {category}."
 
 # Function to process user input and generate AI response
 def process_input(user_input, conversation_state):
@@ -101,6 +115,9 @@ def process_input(user_input, conversation_state):
     elif any(keyword in user_input for keyword in ['search', 'wikipedia']):
         query = ' '.join(filtered_tokens)
         return search_wikipedia(query)
+    elif any(keyword in user_input for keyword in ['recommend', 'suggestion']):
+        category = re.search(r'(?<=recommend\s|suggestion\s)(\w+)', user_input).group(1)
+        return provide_recommendations(category)
     elif conversation_state.user_name is None:
         # If user name is not remembered, prompt user to provide their name
         conversation_state.user_name = user_input.capitalize()
