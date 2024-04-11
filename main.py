@@ -17,6 +17,7 @@ class ConversationState:
     def __init__(self):
         self.greeting_count = 0
         self.goodbye_count = 0
+        self.user_name = None
 
 # Dictionary mapping user input patterns to AI responses
 response_patterns = {
@@ -100,8 +101,13 @@ def process_input(user_input, conversation_state):
     elif any(keyword in user_input for keyword in ['search', 'wikipedia']):
         query = ' '.join(filtered_tokens)
         return search_wikipedia(query)
+    elif conversation_state.user_name is None:
+        # If user name is not remembered, prompt user to provide their name
+        conversation_state.user_name = user_input.capitalize()
+        return f"Nice to meet you, {conversation_state.user_name}! How can I assist you?"
     else:
-        return "Sorry, I didn't understand that. How can I assist you?"
+        # Use the user's name in responses
+        return f"Hello, {conversation_state.user_name}! How can I assist you?"
 
 # Main function to interact with the AI
 def main():
