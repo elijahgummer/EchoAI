@@ -1,4 +1,5 @@
 import random
+import datetime
 
 # Define conversation states
 class ConversationState:
@@ -18,6 +19,23 @@ response_patterns = {
              "I told my wife she was drawing her eyebrows too high. She looked surprised!"],
     "favorite_color": ["My favorite color is blue.", "I don't have eyes to see colors, but blue sounds nice!"]
 }
+
+# Function to perform arithmetic calculations
+def calculate(expression):
+    try:
+        result = eval(expression)
+        return str(result)
+    except Exception as e:
+        return "Sorry, I couldn't perform the calculation. Please provide a valid expression."
+
+# Function to get current date and time
+def get_current_time():
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return f"The current date and time is: {current_time}"
+
+# Function to provide help with general knowledge questions
+def provide_help():
+    return "I'm here to help! Feel free to ask me anything, and I'll do my best to assist you."
 
 # Function to process user input and generate AI response
 def process_input(user_input, conversation_state):
@@ -42,6 +60,12 @@ def process_input(user_input, conversation_state):
         return random.choice(response_patterns["joke"])
     elif "favorite color" in user_input:
         return random.choice(response_patterns["favorite_color"])
+    elif any(operator in user_input for operator in ['+', '-', '*', '/']):
+        return calculate(user_input)
+    elif "time" in user_input or "date" in user_input:
+        return get_current_time()
+    elif "help" in user_input or "question" in user_input:
+        return provide_help()
     else:
         return "Sorry, I didn't understand that."
 
