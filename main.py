@@ -2,6 +2,15 @@ import random
 import datetime
 import re
 import requests
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+import nltk
+
+# Download NLTK resources if not already downloaded
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('stopwords')
 
 # Define conversation states
 class ConversationState:
@@ -62,6 +71,13 @@ def process_input(user_input, conversation_state):
     elif "goodbye" in user_input:
         conversation_state.goodbye_count += 1
 
+    # Tokenize user input
+    tokens = word_tokenize(user_input)
+
+    # Remove stopwords and perform lemmatization
+    stop_words = set(stopwords.words("english"))
+    filtered_tokens = [WordNetLemmatizer().lemmatize(token) for token in tokens if token.lower() not in stop_words]
+
     # Match user input to response patterns
     if conversation_state.greeting_count == 1:
         return random.choice(response_patterns["greeting"])
@@ -82,7 +98,7 @@ def process_input(user_input, conversation_state):
     elif any(keyword in user_input for keyword in ['help', 'question']):
         return provide_help()
     elif any(keyword in user_input for keyword in ['search', 'wikipedia']):
-        query = re.search(r'(?<=search\s|wikipedia\s)(.*)', user_input).group(1)
+        query = ' '.join(filtered_tokens)
         return search_wikipedia(query)
     else:
         return "Sorry, I didn't understand that. How can I assist you?"
