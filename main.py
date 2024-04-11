@@ -1,5 +1,7 @@
 import random
 import datetime
+import re
+import requests
 
 # Define conversation states
 class ConversationState:
@@ -37,6 +39,19 @@ def get_current_time():
 def provide_help():
     return "I'm here to help! Feel free to ask me anything, and I'll do my best to assist you."
 
+# Function to search for information on Wikipedia
+def search_wikipedia(query):
+    # API call to Wikipedia to fetch search results
+    wikipedia_api_url = f"https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={query}&format=json"
+    response = requests.get(wikipedia_api_url)
+    data = response.json()
+
+    # Extract and return the snippet of the first search result
+    if 'query' in data and 'search' in data['query'] and data['query']['search']:
+        return data['query']['search'][0]['snippet']
+    else:
+        return "Sorry, I couldn't find information on that topic."
+
 # Function to process user input and generate AI response
 def process_input(user_input, conversation_state):
     user_input = user_input.lower()
@@ -62,16 +77,19 @@ def process_input(user_input, conversation_state):
         return random.choice(response_patterns["favorite_color"])
     elif any(operator in user_input for operator in ['+', '-', '*', '/']):
         return calculate(user_input)
-    elif "time" in user_input or "date" in user_input:
+    elif any(keyword in user_input for keyword in ['time', 'date']):
         return get_current_time()
-    elif "help" in user_input or "question" in user_input:
+    elif any(keyword in user_input for keyword in ['help', 'question']):
         return provide_help()
+    elif any(keyword in user_input for keyword in ['search', 'wikipedia']):
+        query = re.search(r'(?<=search\s|wikipedia\s)(.*)', user_input).group(1)
+        return search_wikipedia(query)
     else:
-        return "Sorry, I didn't understand that."
+        return "Sorry, I didn't understand that. How can I assist you?"
 
 # Main function to interact with the AI
 def main():
-    print("Welcome to the Enhanced AI!")
+    print("Welcome to the Enhanced Echo AI!")
 
     conversation_state = ConversationState()  # Initialize conversation state
 
