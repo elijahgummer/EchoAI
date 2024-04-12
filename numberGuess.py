@@ -41,11 +41,5 @@ guess = int(input("Guess the Number: "))
 #     else:
 #         guess = int(input("Guess the Number: "))
 
-if guess == a:
-    print("You Have guessed right")
-elif guess != a:
-    print("Try Again...")
-    guess = int(input("Guess the Number: "))
-else:
-    print("Somthing Wrong!!!")
+
         
