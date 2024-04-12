@@ -17,7 +17,7 @@ if mode == 1:
     print("You Have Chosen Baby Mode!!!")
     a = random.randint(1,10)
     print(a)
-
+    
 elif mode == 2:
     print("You Have Chosen Regular!!!")
     a = random.randint(1,50)
@@ -29,7 +29,15 @@ elif mode == 3:
 else:
     print("Somthing Went Wrong...")
 
+##gives message to choose number once mode had been selected
+
+
 ##FUNCTIONALITY TO DETERMINE WEATHER THE Answer equals the users answer
-
- 
-
+def correctAnswer():
+    if (guess == a):
+        print("You Have guessed right")
+    elif (guess != a):
+        print("Try Again...")
+    else:
+        guess = int(input("Guess the Number: "))
+        
