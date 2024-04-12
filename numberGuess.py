@@ -34,13 +34,14 @@ guess = int(input("Guess the Number: "))
 
 
     ##FUNCTIONALITY TO DETERMINE WEATHER THE Answer equals the users answer
-def loopAnswerOutput():
+def WrongAnswer():
+    print("Try Again...")
     guess = int(input("Guess the Number: "))
     
 if guess == a:
     print("You Have guessed right")
 elif guess != a:
-    print("Try Again...")
-    loopAnswerOutput()
+    for 
+    WrongAnswer()  
 else:
     print("Somthing Went Wrong!!!")
