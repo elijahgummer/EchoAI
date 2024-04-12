@@ -29,5 +29,7 @@ elif mode == 3:
 else:
     print("Somthing Went Wrong...")
 
+##FUNCTIONALITY TO DETERMINE WEATHER THE Answer equals the users answer
+
  
 
