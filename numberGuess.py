@@ -22,6 +22,7 @@ if mode == 1:
     print("------------------------------------")
     a = random.randint(1, 10)
     print(a)
+    lives = 3
     ##gives message to choose number once mode had been selected
 elif mode == 2:
     print("------------------------------------")
@@ -29,12 +30,14 @@ elif mode == 2:
     print("------------------------------------")
     a = random.randint(1, 50)
     print(a)
+    lives = 3
 elif mode == 3:
     print("------------------------------------")
     print("You Have Chosen Hard Mode!!!")
     print("------------------------------------")
     a = random.randint(1, 100)
     print(a)
+    lives = 4
 else:
     print("------------------------------------")
     print("Somthing Went Wrong...")
