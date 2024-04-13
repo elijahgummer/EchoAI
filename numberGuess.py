@@ -48,19 +48,19 @@ guess = int(input("Guess the Number: "))
 
 while guess != a and lives != 0:
     if guess > a:
-        print("------------------------------------")
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
         print("You Have Guessed to High")
-        print("------------------------------------")
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
         guess = int(input("Guess the Number: "))
-        print("------------------------------------")
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
         lives = lives - 1
         print(lives)
     elif guess < a:
-        print("------------------------------------")
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
         print("You Have Guessed to Low")
-        print("------------------------------------")
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
         guess = int(input("Guess the Number: "))
-        print("------------------------------------")
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
         lives = lives - 1
         print(lives)
 
