@@ -9,26 +9,36 @@ print("1 = Baby Mode")
 print("2 = Regular")
 print("3 = Hard")
 print("------------------------------------")
+
 mode = int(input("Please Enter Difficulty: "))
+
+print("------------------------------------")
 
 ##MODE SELECTION
 ##Based on Mode selected gives desired difficultys like more lives and a smaller
 if mode == 1:
+    print("------------------------------------")
     print("You Have Chosen Baby Mode!!!")
+    print("------------------------------------")
     a = random.randint(1, 10)
     print(a)
     ##gives message to choose number once mode had been selected
 elif mode == 2:
+    print("------------------------------------")
     print("You Have Chosen Regular!!!")
+    print("------------------------------------")
     a = random.randint(1, 50)
     print(a)
 elif mode == 3:
+    print("------------------------------------")
     print("You Have Chosen Hard Mode!!!")
+    print("------------------------------------")
     a = random.randint(1, 100)
     print(a)
 else:
+    print("------------------------------------")
     print("Somthing Went Wrong...")
-
+    print("------------------------------------")
 
 guess = int(input("Guess the Number: "))
 
