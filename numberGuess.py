@@ -19,7 +19,7 @@ print("------------------------------------")
 ##Based on Mode selected gives desired difficultys like more lives and a smaller
 if mode == 1:
     print("------------------------------------")
-    print("You Have Chosen Baby Mode!!!")
+    print("You Have Chosen Baby Mode!!! 👶👶")
     print("------------------------------------")
     a = random.randint(1, 10)
     print(a)
@@ -27,14 +27,14 @@ if mode == 1:
     ##gives message to choose number once mode had been selected
 elif mode == 2:
     print("------------------------------------")
-    print("You Have Chosen Regular!!!")
+    print("You Have Chosen Regular!!! 😎😎 ")
     print("------------------------------------")
     a = random.randint(1, 50)
     print(a)
     lives = 3
 elif mode == 3:
     print("------------------------------------")
-    print("You Have Chosen Hard Mode!!!")
+    print("You Have Chosen Hard Mode!!! 👹👹")
     print("------------------------------------")
     a = random.randint(1, 100)
     print(a)
@@ -66,7 +66,7 @@ while guess != a and lives != 0:
 
 if guess == a:
     print("------------------------------------")
-    print("You Guessed The Write Number You Won")
+    print("You Guessed The Write Number You Won 🥳🎊")
     print("------------------------------------")
 
 if lives == 0:
