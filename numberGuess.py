@@ -22,7 +22,6 @@ if mode == 1:
     print("You Have Chosen Baby Mode!!! 👶👶")
     print("------------------------------------")
     a = random.randint(1, 10)
-    print(a)
     lives = 3
     ##gives message to choose number once mode had been selected
 elif mode == 2:
@@ -30,14 +29,12 @@ elif mode == 2:
     print("You Have Chosen Regular!!! 😎😎 ")
     print("------------------------------------")
     a = random.randint(1, 50)
-    print(a)
     lives = 3
 elif mode == 3:
     print("------------------------------------")
     print("You Have Chosen Hard Mode!!! 👹👹")
     print("------------------------------------")
     a = random.randint(1, 100)
-    print(a)
     lives = 4
 else:
     print("------------------------------------")
@@ -54,7 +51,6 @@ while guess != a and lives != 0:
         guess = int(input("Guess the Number: "))
         print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
         lives = lives - 1
-        print(lives)
     elif guess < a:
         print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
         print("You Have Guessed to Low")
@@ -62,7 +58,6 @@ while guess != a and lives != 0:
         guess = int(input("Guess the Number: "))
         print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
         lives = lives - 1
-        print(lives)
 
 if guess == a:
     print("------------------------------------")
