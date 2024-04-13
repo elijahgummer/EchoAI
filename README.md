@@ -35,7 +35,7 @@ https://github.com/elijahgummer/EchoAI.git
 
 ## Customization
 
-- Modify the Python code (`echo_ai.py`) to customize Echo AI's behavior and responses.
+- Modify the Python code (`main.py`) to customize Echo AI's behavior and responses.
 
 ---
 
