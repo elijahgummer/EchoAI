@@ -71,9 +71,9 @@ if guess == a:
 
 if lives == 0:
     print("------------------------------------")
-    print("YOU FAILED")
+    print("YOU FAILED 😭😭")
     print("------------------------------------")
     print(f"The Answer is **{a}**")
     print("------------------------------------")
-    print(f"{name}, You Have {lives} Lives Left...")
+    print(f"{name}, You Have {lives}❤️ Lives Left...")
     print("------------------------------------")
