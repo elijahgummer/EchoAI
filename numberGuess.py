@@ -32,16 +32,16 @@ else:
 
 guess = int(input("Guess the Number: "))
 
-
-    ##FUNCTIONALITY TO DETERMINE WEATHER THE Answer equals the users answer
-def WrongAnswer():
-    print("Try Again...")
-    guess = int(input("Guess the Number: "))
+while guess != a:
     
-if guess == a:
-    print("You Have guessed right")
-elif guess != a:
-    for 
-    WrongAnswer()  
+    ##FUNCTIONALITY TO DETERMINE WEATHER THE Answer equals the users answer
+
+    
+if guess > a:
+    print("You Have Guessed to High")
+    guess = int(input("Guess the Number: "))
+elif guess < a:
+    print("You Have Guessed to Low")
+    guess = int(input("Guess the Number: ")) 
 else:
     print("Somthing Went Wrong!!!")
