@@ -39,7 +39,9 @@ while guess != a:
     elif guess < a:
         print("You Have Guessed to Low")
         guess = int(input("Guess the Number: ")) 
-    elif guess == a:
-        print("You Guessed The Write Number You Won")
     else:
         print("Somthing Went Wrong")
+
+if guess == a:
+    print("You Guessed The Write Number You Won")
+    
