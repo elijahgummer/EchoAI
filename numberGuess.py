@@ -10,7 +10,7 @@ print("2 = Regular")
 print("3 = Hard")
 print("------------------------------------")
 
-mode = int(input("Please Enter Difficulty: "))
+mode = int(input(f"Please Enter Difficulty, {name}: "))
 
 print("------------------------------------")
 
@@ -45,7 +45,7 @@ else:
 
 guess = int(input("Guess the Number: "))
 
-while guess != a:
+while guess != a and lives != 0:
     if guess > a:
         print("You Have Guessed to High")
         guess = int(input("Guess the Number: "))
@@ -53,7 +53,9 @@ while guess != a:
         print("You Have Guessed to Low")
         guess = int(input("Guess the Number: ")) 
     else:
-        print("Somthing Went Wrong")
+        print("YOU FAILED")
+        print(f"The Answer is **{a}**")
+        print(f"{name}, You Have {lives} Lives Left...")
 
 if guess == a:
     print("You Guessed The Write Number You Won")
