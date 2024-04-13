@@ -49,14 +49,18 @@ while guess != a and lives != 0:
     if guess > a:
         print("You Have Guessed to High")
         guess = int(input("Guess the Number: "))
+        lives = lives - 1
+        print(lives)
     elif guess < a:
         print("You Have Guessed to Low")
-        guess = int(input("Guess the Number: ")) 
-    else:
-        print("YOU FAILED")
-        print(f"The Answer is **{a}**")
-        print(f"{name}, You Have {lives} Lives Left...")
+        guess = int(input("Guess the Number: "))
+        lives = lives - 1
+        print(lives)
 
 if guess == a:
     print("You Guessed The Write Number You Won")
-    
+
+if lives == 0:
+    print("YOU FAILED")
+    print(f"The Answer is **{a}**")
+    print(f"{name}, You Have {lives} Lives Left...")
