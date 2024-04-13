@@ -3,6 +3,7 @@ import random
 print("Welcome to the Guess the number!!!")
 print("------------------------------------")
 name = input("Please Type Your Name: ")
+print("------------------------------------")
 print(f"Hello, {name}, Please Choose A Difficulty")
 print("------------------------------------")
 print("1 = Baby Mode")
@@ -47,20 +48,32 @@ guess = int(input("Guess the Number: "))
 
 while guess != a and lives != 0:
     if guess > a:
+        print("------------------------------------")
         print("You Have Guessed to High")
+        print("------------------------------------")
         guess = int(input("Guess the Number: "))
+        print("------------------------------------")
         lives = lives - 1
         print(lives)
     elif guess < a:
+        print("------------------------------------")
         print("You Have Guessed to Low")
+        print("------------------------------------")
         guess = int(input("Guess the Number: "))
+        print("------------------------------------")
         lives = lives - 1
         print(lives)
 
 if guess == a:
+    print("------------------------------------")
     print("You Guessed The Write Number You Won")
+    print("------------------------------------")
 
 if lives == 0:
+    print("------------------------------------")
     print("YOU FAILED")
+    print("------------------------------------")
     print(f"The Answer is **{a}**")
+    print("------------------------------------")
     print(f"{name}, You Have {lives} Lives Left...")
+    print("------------------------------------")
