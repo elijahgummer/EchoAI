@@ -59,7 +59,7 @@ while guess != a and lives != 0:
         guess = int(input("Guess the Number: "))
         print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
         lives = lives - 1
-        print(f"{name}, has {lives} left...")
+        print(f"{name}, has {lives} lives left...")
 
 if guess == a:
     print("------------------------------------")
