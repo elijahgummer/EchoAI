@@ -11,6 +11,29 @@ Echo AI is a simple AI designed to echo back whatever input it receives from the
 
 ---
 
+## Features
+
+![image](https://github.com/elijahgummer/EchoAI/assets/96103526/86f9dce5-5066-4c66-8c03-e1fc999195c5)
+
+## How to Use Echo AI
+Greeting: Simply say hello or hi.
+
+Time and Date: Ask for the current time or date.
+
+Joke: Ask for a joke.
+
+Simple Math: Use arithmetic operators (+, -, *, /) and numbers.
+
+Search Wikipedia: Use "search" or "Wikipedia" followed by the topic.
+
+Weather: Ask for the current weather conditions.
+
+Manners: Say "please" and "thank you."
+
+Ending: Say goodbye to end the conversation.
+
+---
+
 ## Getting Started
 
 1. **Clone the Repository:**
